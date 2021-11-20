@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+
+
+    <div class="container">
+        
+        <h1>Signup</h1>
+        
+        <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            
+                {% if form.errors %}
+                    {% for key,val in form.errors.items %}
+                        {% for error in val %}
+                            <div class="error">
+                                {{error}}
+                            </div>    
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+            
+            <div class="in">
+                <i class="far fa-user"></i>
+                <input type="text" name="username">
+            </div>
+    
+            <div class="in">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password1">
+            </div>
+    
+            <div class="in">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password2">
+            </div>
+
+            <button type="submit">Signup</button>
+    
+            <a href="{% url 'login' %}">Have Account, Login ?</a>
+            
+        </form>
+    </div>
+    
+
+
+
+</body>
+</html>

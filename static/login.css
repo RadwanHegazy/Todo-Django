@@ -1,0 +1,87 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap'); */
+
+
+body {
+    background-color: #609FFF;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    height: 400px;
+    width: 300px;
+    padding: 17px;
+}
+
+.container h1 {
+    font-size: 39px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+.in {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 7px;
+    margin-top: 10px;
+}
+
+.in i {
+    color: #fff;
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+    height: 100%;
+}
+
+.in input {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 7px;
+    margin-left: 5px;
+    color: #fff;
+}
+
+button{
+    margin-top: 10px;
+    width: 310px;
+    background-color: #2276f3;
+    border: none;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px auto;
+    font-size: 15px;
+    box-sizing: 0px 24px 40px rgba(0,0,0,0.5);
+}
+
+a{ 
+    font-family: "Raleway",sans-serif;
+    color: rgb(255, 253, 253);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ddd;
+}
+
+.error {
+    background-color: rgba(212, 70, 70, 0.835);
+    font-family: "Raleway",sans-serif;
+    border: 1px solid red;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fff;
+    padding: 7px;
+    width: 100%;
+}

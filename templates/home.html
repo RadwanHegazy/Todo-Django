@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+    <title>Todo - CBV</title>
+</head>
+<body>
+
+    <div class="overlay">
+        <div class="box">
+            <h1>New Todo</h1>
+            <p>Please write content of todo in input below!</p>
+            <form action="." method="post">
+                {% csrf_token %}
+                <input type="text" name="todo" required placeholder="Do Something!">
+                <div class="btns">
+                    <button class="can" type="button">Cancel</button>
+                    <button class="add" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="bar">
+        <h1>{{user}}'s List</h1>
+        <div class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="{% url 'logout' %}"> logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        {% for i in object_list %}
+            {% if i.is_done %}
+                <a class="do active" href="{% url 'check' i.id %}">
+                    <div class="actions">
+                        <p>{{i.text}}</p>
+                        <a href="{% url 'edit' i.id %}">Edit</a>
+                        <a href="{% url 'del' i.id %}">Delete</a>
+                    </div>
+                </a>
+            
+            {% else %}
+                <a class="do" href="{% url 'check' i.id %}">
+                    <div class="actions">
+                        <p>{{i.text}}</p>
+                        <a href="{% url 'edit' i.id %}">Edit</a>
+                        <a href="{% url 'del' i.id %}">Delete</a>
+                    </div>    
+                </a>
+            {% endif %}
+            
+        {% endfor %}
+
+
+        
+
+    </div>
+
+
+    <button class="addBtn"> <i class="fas fa-plus"></i></button>
+
+
+
+    <script>
+        document.querySelector('.addBtn').onclick = function(){
+            document.querySelector('.overlay').classList.toggle('view')
+        }
+
+        document.querySelector('.can').onclick = function(){
+            document.querySelector('.overlay').classList.remove('view')
+        }
+
+
+    </script>
+</body>
+</html>

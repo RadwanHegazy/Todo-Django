@@ -1,0 +1,41 @@
+
+
+.container input {
+    padding: 17px;
+    width: 100%;
+    font-size: 30px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.container .buttons {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container .buttons button {
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    margin: 7px;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.container .buttons .save {
+    background-color: greenyellow;
+}
+
+
+@media (max-width:728px) {
+    .container {
+        width: 80%;
+    }
+}
